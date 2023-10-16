@@ -321,7 +321,7 @@
     <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
-      <version>20160212</version>
+      <version>20231013</version>
     </dependency>
 
     <!-- soy build-time dependency only. see maven-antrun-plugin:generated-soyutils -->
@@ -502,14 +502,10 @@
             <phase>package</phase>
             <configuration>
               <target>
-                <taskdef name="gen.escape.directives"
-                    classname="com.google.template.soy.jssrc.internal.GenerateSoyUtilsEscapingDirectiveCode"
-                    classpathref="maven.runtime.classpath"/>
+                <taskdef name="gen.escape.directives" classname="com.google.template.soy.jssrc.internal.GenerateSoyUtilsEscapingDirectiveCode" classpathref="maven.runtime.classpath"/>
                 <gen.escape.directives>
-                  <input
-                      path="${project.basedir}/javascript/soyutils_usegoog.js"/>
-                  <output
-                      path="${project.build.directory}/soyutils_usegoog.js"/>
+                  <input path="${project.basedir}/javascript/soyutils_usegoog.js"/>
+                  <output path="${project.build.directory}/soyutils_usegoog.js"/>
                   <libdefined pattern="goog.string.*"/>
                   <libdefined pattern="goog.asserts.*"/>
                 </gen.escape.directives>
@@ -643,8 +639,7 @@
               <shadedClassifierName>SoyToIncrementalDomSrcCompiler
               </shadedClassifierName>
               <transformers>
-                <transformer
-                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <mainClass>
                     com.google.template.soy.SoyToIncrementalDomSrcCompiler
                   </mainClass>
@@ -662,8 +657,7 @@
               <shadedArtifactAttached>true</shadedArtifactAttached>
               <shadedClassifierName>SoyToJsSrcCompiler</shadedClassifierName>
               <transformers>
-                <transformer
-                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <mainClass>com.google.template.soy.SoyToJsSrcCompiler
                   </mainClass>
                 </transformer>
@@ -680,8 +674,7 @@
               <shadedArtifactAttached>true</shadedArtifactAttached>
               <shadedClassifierName>SoyToPySrcCompiler</shadedClassifierName>
               <transformers>
-                <transformer
-                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <mainClass>com.google.template.soy.SoyToPySrcCompiler
                   </mainClass>
                 </transformer>
@@ -698,8 +691,7 @@
               <shadedArtifactAttached>true</shadedArtifactAttached>
               <shadedClassifierName>SoyHeaderCompiler</shadedClassifierName>
               <transformers>
-                <transformer
-                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <mainClass>com.google.template.soy.SoyHeaderCompiler
                   </mainClass>
                 </transformer>
@@ -716,8 +708,7 @@
               <shadedArtifactAttached>true</shadedArtifactAttached>
               <shadedClassifierName>SoyParseInfoGenerator</shadedClassifierName>
               <transformers>
-                <transformer
-                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <mainClass>com.google.template.soy.SoyParseInfoGenerator
                   </mainClass>
                 </transformer>
@@ -734,8 +725,7 @@
               <shadedArtifactAttached>true</shadedArtifactAttached>
               <shadedClassifierName>SoyMsgExtractor</shadedClassifierName>
               <transformers>
-                <transformer
-                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <mainClass>com.google.template.soy.SoyMsgExtractor</mainClass>
                 </transformer>
               </transformers>
@@ -751,8 +741,7 @@
               <shadedArtifactAttached>true</shadedArtifactAttached>
               <shadedClassifierName>SoyToJbcSrcCompiler</shadedClassifierName>
               <transformers>
-                <transformer
-                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <mainClass>com.google.template.soy.SoyToJbcSrcCompiler
                   </mainClass>
                 </transformer>
